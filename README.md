@@ -14,22 +14,16 @@
   </h3>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-
 ## Table of Contents
 
 - [Overview](#overview)
   - Built With HTML , CSS , Vanilla JS
 - [Features](#features)
   - Modern CSS design , Using REST API
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
-
-<!-- OVERVIEW -->
 
 ## Overview
 
-![screenshot]("https://github.com/J0SUKE/Geography-quiz-app/blob/main/screenshots/home.png")
+![screenshot]("./screenshots/home.png")
 
 
 ## Contact
