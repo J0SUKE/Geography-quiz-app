@@ -3,13 +3,14 @@
 <h1 align="center">{GeoQuiz}</h1>
 
 <div align="center">
-   small quiz app about flags and capitales
+   A small quiz app about flags and capitales using Vanilla Javascript and pure CSS
 </div>
 
 <div align="center">
   <h3>
+    See the Demo 
     <a href="https://j0suke.github.io/Geography-quiz-app/">
-      Demo
+      here
     </a>
   </h3>
 </div>
@@ -17,7 +18,7 @@
 ## Table of Contents
 
 - [Overview](#overview)
-  - Built With HTML , CSS , Vanilla JS
+  - Built With HTML , pure CSS , Vanilla JS
 - [Features](#features)
   - Modern CSS design , Using REST API
 
