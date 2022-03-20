@@ -9,7 +9,7 @@
 <div align="center">
   <h3>
     See the Demo 
-    <a href="https://j0suke.github.io/Geography-quiz-app/">
+    <a href="https://j0suke.github.io/Geography-quiz-app/" targer="_blank">
       here
     </a>
   </h3>
