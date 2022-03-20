@@ -23,7 +23,7 @@
 
 ## Overview
 
-![screenshot]("screenshots/home.png")
+![screenshot](screenshots/home.png)
 
 
 ## Contact
