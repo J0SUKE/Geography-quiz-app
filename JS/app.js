@@ -275,9 +275,9 @@ let quizChoices = document.querySelectorAll(".homepage .content ul li");
 
   function setScoresInHomePage() {
     
-    document.querySelector(".score[data-score=\"flags\"]").innerHTML = `${getBestScore("drapeaux")*4} %`;
+    document.querySelector(".score[data-score=\"flags\"]").innerHTML = `${getBestScore("drapeaux")*5} %`;
     
-    document.querySelector(".score[data-score=\"capitales\"]").innerHTML = `${getBestScore("capitales")*4} %`;
+    document.querySelector(".score[data-score=\"capitales\"]").innerHTML = `${getBestScore("capitales")*5} %`;
     
   }
 
