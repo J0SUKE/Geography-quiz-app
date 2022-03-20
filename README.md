@@ -28,7 +28,7 @@
 
 ## Overview
 
-![screenshot]("./screenshots/home.png")
+![screenshot]("https://github.com/J0SUKE/Geography-quiz-app/blob/main/screenshots/home.png")
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
