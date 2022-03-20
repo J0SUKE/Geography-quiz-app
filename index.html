@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quiz Geographie</title>
+  <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span>Geo</span>Quiz
+    </div>
+    <div class="about">
+      developpé par <span><a href="https://github.com/J0SUKE" target="_blank">Jean</a></span>
+    </div>
+  </header>
+
+  <div class="loader-layer">
+    <div class="lds-dual-ring"></div>
+  </div>
+  
+
+  <div class="homepage inactive">  
+    <div class="content">
+      <p>Selectionez un quiz</p>
+      <ul>
+        <li data-quiz="flags" class="quiz-selection-element">
+          <div class="quiz-selection-element__animation">
+            <img src="./assets/icons8-spain-48.png" alt="">
+            <img src="./assets/icons8-argentina-48.png" alt="">
+            <img src="./assets/icons8-benin-48.png" alt="">
+          </div>
+          <div class="quiz-selection-element__content">
+            <h1>Drapeaux
+              <img src="./assets/icons8-france-48.png" alt="">
+            </h1>
+            <p><span>meilleur score :</span> <span class="score" data-score="flags">23<span</p>
+          </div>
+          
+        </li>
+        <li data-quiz="capitales" class="quiz-selection-element">
+          <div class="quiz-selection-element__animation">
+            <img src="./assets/icons8-france-64.png" alt="">
+            <img src="./assets/icons8-rome-64.png" alt="">
+            <img src="./assets/icons8-taj-mahal-48.png" alt="">
+          </div>
+          <div class="quiz-selection-element__content">
+            <h1>Capitales
+              <img src="./assets/icons8-eiffel-tower-64.png" alt="">
+            </h1>
+            <p><span>meilleur score :</span> <span class="score" data-score="capitales">65<span></p>
+          </div>
+          
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="quiz-section inactive">
+    <div class="progression">
+      <div class="progression__bar-container">
+        <div class="progression__bar"></div>
+      </div>
+      <div class="progression__status">
+        <span>0</span>/20
+      </div>
+    </div>
+    
+    <div class="quiz-section__content">
+      <div class="question">
+        <p></p>
+        <img alt="">
+        <span></span>
+      </div>
+      <ul class="propositions">
+          <li data-rep="A">
+            <span>A</span><span class="option"></span>
+          </li>
+          <li data-rep="B">
+            <span>B</span><span class="option"></span>
+          </li>
+          <li data-rep="C">
+            <span>C</span><span class="option"></span>
+          </li>
+          <li data-rep="D">
+            <span>D</span><span class="option"></span>
+          </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="game-over inactive">
+    <div class="game-over__score">
+      <p>Votre score :</p> 
+      <p>
+        <span>10 / 20</span>
+      </p>
+    </div>
+    <div class="game-over__best-score">
+      <p>meilleur score :</p>
+      <p>
+        <span>20 / 20</span>
+      </p>
+    </div>
+    <div class="btns">
+      <div class="retry">Réssayer</div>
+      <div class="home">Quitter</div>
+    </div>
+  </div>  
+</body>
+<script src="./JS/app.js"></script>
+</html>
