@@ -24,6 +24,7 @@
 ## Overview
 
 ![screenshot](screenshots/home.png)
+![screenshot](screenshots/quiz.png)
 
 
 ## Contact
