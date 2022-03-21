@@ -264,11 +264,11 @@ let quizChoices = document.querySelectorAll(".homepage .content ul li");
   {
       if(quiz=="drapeaux")
       {
-        document.cookie = `flagsBest=${bestScore}; SameSite=None; Secure`;
+        document.cookie = `flagsBest=${bestScore}; expires=Tue, 19 Jan 2038 04:14:07 GMT`;
       }
       else
       {
-        document.cookie = `capitalBest=${bestScore}; SameSite=None; Secure`;
+        document.cookie = `capitalBest=${bestScore}; expires=Tue, 19 Jan 2038 04:14:07 GMT`;
       }
   }
 
