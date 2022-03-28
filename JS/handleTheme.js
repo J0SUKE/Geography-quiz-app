@@ -2,7 +2,11 @@
 
 let COOKIES = document.cookie.split("; ");
 let theme = COOKIES.find(row => row.includes("quizGeoTheme"));
-document.body.className=theme.split("=")[1];
+if(theme)
+{
+  document.body.className=theme.split("=")[1];
+}
+
 
 
 //----handle the theme btn------
