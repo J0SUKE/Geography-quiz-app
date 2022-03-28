@@ -703,6 +703,30 @@ header
     }
   }
 
+
+footer
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+        color: $font-color;
+        white-space: nowrap;
+        transform-origin: center center;
+        transform: rotate(90deg);
+    }
+
+    @media screen and(max-width:650px) {
+        display: none;
+    }
+}
+
+
 .dark{
     background: $dark-primary;
 
@@ -833,6 +857,13 @@ header
             p{
                 color: lightgray;
             }
+        }
+    }
+
+    footer
+    {
+        span{
+            color: lightgray;
         }
     }
 

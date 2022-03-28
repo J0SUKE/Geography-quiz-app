@@ -940,6 +940,38 @@ header .theme-btn span.btn-dark::before {
   }
 }
 
+footer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer span {
+  color: #242424;
+  white-space: nowrap;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+@media screen and (max-width: 650px) {
+  footer {
+    display: none;
+  }
+}
+
 .dark {
   background: #15141A;
 }
@@ -1043,6 +1075,10 @@ header .theme-btn span.btn-dark::before {
 }
 
 .dark .game-over__best-score p, .dark .game-over__score p {
+  color: lightgray;
+}
+
+.dark footer span {
   color: lightgray;
 }
 /*# sourceMappingURL=style.css.map */
