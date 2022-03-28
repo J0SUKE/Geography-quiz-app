@@ -3,7 +3,7 @@
 <h1 align="center">{GeoQuiz}</h1>
 
 <div align="center">
-   A small quiz app about flags and capitales using Vanilla Javascript and pure CSS
+   A small quiz app about flags and capital cities using Vanilla Javascript and pure SCSS
 </div>
 
 <div align="center">
