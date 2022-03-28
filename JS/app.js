@@ -227,6 +227,31 @@ let quizChoices = document.querySelectorAll(".homepage .content ul li");
     });
   }
 
+
+  function quiGame() {
+      resetQuiz();
+
+      setScoresInHomePage();
+      
+      quizSection.classList.remove("section-apear");
+      quizSection.classList.add("section-disapear");
+      
+    
+      setTimeout(() => {
+          quizSection.classList.add("inactive");  
+          homepage.classList.remove("inactive");  
+          homepage.classList.add("section-apear");
+          homepage.classList.remove("section-disapear");
+          
+        }, 700);
+
+      // setTimeout(() => {
+      //   homepage.classList.remove("section-apear");
+      // }, 700);
+  }
+
+  document.querySelector(".quit").addEventListener("click",quiGame);
+
   function getBestScore(quiz)
   {
       let cookies = document.cookie.split("; ");
