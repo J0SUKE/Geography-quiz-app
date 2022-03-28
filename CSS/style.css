@@ -14,6 +14,11 @@ a {
 
 body {
   background: #ebebeb;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
 }
 
 .inactive {
@@ -33,6 +38,7 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 3rem;
+  color: #242424;
 }
 
 header .logo {
@@ -45,7 +51,74 @@ header .logo span {
 }
 
 header .about {
-  color: #333333;
+  color: #242424;
+}
+
+header .about a {
+  color: #242424;
+}
+
+header .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .theme-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 1rem;
+  width: 100px;
+}
+
+header .theme-btn svg {
+  height: 20px;
+}
+
+header .theme-btn svg path {
+  fill: #242424;
+}
+
+header .theme-btn span {
+  border-radius: 8px;
+  height: 16px;
+  width: 40px;
+  background: lightgray;
+  position: relative;
+  cursor: pointer;
+  overflow: visible;
+}
+
+header .theme-btn span::before {
+  position: absolute;
+  content: "";
+  top: -1px;
+  left: -2px;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: #242424;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+header .theme-btn span.btn-dark::before {
+  -webkit-transform: translateX(25px);
+          transform: translateX(25px);
 }
 
 .homepage {
@@ -62,12 +135,16 @@ header .about {
           box-shadow: 0 0 10px darkgray;
   border-radius: 1rem;
   padding: 3%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .homepage .content > p {
   font-size: 1.5rem;
   text-align: center;
-  color: #333333;
+  color: #242424;
 }
 
 .homepage .content ul {
@@ -271,7 +348,11 @@ header .about {
           box-shadow: 0 0 10px lightgray;
   border-radius: 1rem;
   padding: 2% 4%;
-  color: #333333;
+  color: #242424;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .quiz-section .progression {
@@ -344,6 +425,7 @@ header .about {
 .quiz-section .progression__status {
   font-size: 1.2rem;
   font-weight: 500;
+  color: #242424;
 }
 
 .quiz-section__content.disapear {
@@ -422,6 +504,7 @@ header .about {
   width: 60px;
   height: auto;
   margin-top: .6rem;
+  border: 1px solid darkgray;
 }
 
 .quiz-section__content .propositions {
@@ -676,6 +759,10 @@ header .about {
   -webkit-box-shadow: 0 0 10px lightgray;
           box-shadow: 0 0 10px lightgray;
   border-radius: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .game-over__best-score, .game-over__score {
@@ -702,6 +789,7 @@ header .about {
       -ms-flex-align: end;
           align-items: flex-end;
   line-height: 1;
+  color: #242424;
 }
 
 .game-over__best-score p span, .game-over__score p span {
@@ -807,17 +895,103 @@ header .about {
   }
 }
 
-@media screen and (max-width: 700px) {
-  .homepage .content {
-    max-width: unset;
-    width: 80%;
-  }
-  .quiz-section {
-    max-width: unset;
-    width: 80%;
-  }
-  .quiz-section__content .question {
-    font-size: 22px;
-  }
+.dark {
+  background: #15141A;
+}
+
+.dark header {
+  color: lightgray;
+}
+
+.dark header .about {
+  color: lightgray;
+}
+
+.dark header .about a {
+  color: lightgray;
+}
+
+.dark header .theme-btn svg path {
+  fill: lightgray;
+}
+
+.dark header .theme-btn span {
+  background: #242424;
+}
+
+.dark header .theme-btn span::before {
+  background: darkgray;
+}
+
+.dark .loader-layer {
+  background: #15141A;
+}
+
+.dark .lds-dual-ring:after {
+  border: 6px solid lightgray;
+  border-color: lightgray transparent lightgray transparent;
+}
+
+.dark .homepage .content {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: #23222B;
+}
+
+.dark .homepage .content > p {
+  color: lightgray;
+}
+
+.dark .homepage .content ul .quiz-selection-element {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.dark .homepage .content ul .quiz-selection-element__content h1, .dark .homepage .content ul .quiz-selection-element__content p {
+  color: lightgray;
+}
+
+.dark .quiz-section {
+  background: #23222B;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.dark .quiz-section .progression .quit::before, .dark .quiz-section .progression .quit::after {
+  background: lightgray;
+}
+
+.dark .quiz-section .progression__bar-container {
+  background: darkgray;
+}
+
+.dark .quiz-section .progression__status {
+  color: lightgray;
+}
+
+.dark .quiz-section__content p {
+  color: lightgray;
+}
+
+.dark .quiz-section__content img {
+  border: none;
+}
+
+.dark .quiz-section__content .propositions li {
+  color: lightgray;
+}
+
+.dark .quiz-section__content .propositions li:hover {
+  background: #15141A;
+}
+
+.dark .game-over {
+  background: #23222B;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.dark .game-over__best-score p, .dark .game-over__score p {
+  color: lightgray;
 }
 /*# sourceMappingURL=style.css.map */

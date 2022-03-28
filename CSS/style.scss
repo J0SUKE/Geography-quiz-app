@@ -14,8 +14,10 @@ a{
 
 $main-color:rgb(199, 59, 16);
 $main-color-light:rgba(202, 119, 94,.3);
-$dark-bg:#15141a;
-$font-color: rgb(51, 51, 51);
+
+$dark-primary:#15141A;
+$dark-secondary:#23222B;
+$font-color: rgb(36, 36, 36);
 $font-color-secondary: rgb(87, 87, 87);
 $green:rgb(0, 134, 0);
 $red:rgb(168, 43, 43);
@@ -25,8 +27,11 @@ $border-radius:1rem;
 
 body{
     background: rgb(235, 235, 235);
+    min-height: 100vh;
 }
-
+a{
+    color: inherit;
+}
 .inactive
 {
     display: none;
@@ -40,7 +45,7 @@ header
     align-items: center;
     justify-content: space-between;
     padding: 0 3rem;
-
+    color: $font-color;
     .logo
     {
         font-size: 2rem;
@@ -50,7 +55,64 @@ header
         }
     }
     .about{
-        color: rgb(51, 51, 51);
+        color: $font-color;
+        a{
+            color: $font-color;
+        }
+    }
+    .right
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .theme-btn
+    {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 1rem;
+        width: 100px;
+        svg{
+            height: 20px;
+            
+            path{
+                fill: $font-color;
+            }
+        }
+        span{
+            border-radius: 8px;
+            height: 16px;
+            width: 40px;
+            background: lightgray;
+            //box-sizing: content-box;
+            position: relative;
+            cursor: pointer;
+            overflow: visible;
+            &::before
+            {
+                position: absolute;
+                content: "";
+                top: -1px;
+                left: -2px;
+                height: 18px;
+                width: 18px;
+                border-radius: 50%;
+                background: $font-color;
+                transform: translateX(0);
+                transition: transform .3s;
+            }
+
+            &.btn-dark
+            {
+                &::before
+                {
+                    transform: translateX(25px);
+                }
+                
+            }
+            
+        }
     }
 }
 
@@ -68,7 +130,8 @@ header
         width: 60%;
         box-shadow: 0 0 10px darkgray;
         border-radius: $border-radius;
-        padding: 3%;
+        padding: 3%;    
+        user-select: none;
 
         &>p{
             font-size: 1.5rem;
@@ -225,6 +288,7 @@ header
     border-radius: $border-radius;
     padding: 2% 4%;
     color: $font-color;
+    user-select: none;
     // transform: scale(0);
     .progression
     {
@@ -287,6 +351,7 @@ header
         {
             font-size: 1.2rem;
             font-weight: 500;
+            color: $font-color;
         }
 
     }
@@ -339,6 +404,7 @@ header
                 width: 60px;
                 height: auto;
                 margin-top: .6rem;
+                border: 1px solid darkgray;
             }
         }
     
@@ -489,6 +555,7 @@ header
     background: white;
     box-shadow: $box-shadow-light;
     border-radius: $border-radius;
+    user-select: none;
     //animation-delay: .5s;
 
     &__best-score,&__score
@@ -505,6 +572,7 @@ header
             display: flex;
             align-items: flex-end;
             line-height: 1;
+            color: $font-color;
             span{
                 display: block;
                 margin-left: 1rem;
@@ -591,30 +659,132 @@ header
       transform: rotate(360deg);
     }
   }
-  
 
+.dark{
+    background: $dark-primary;
 
-@media screen and (max-width: 700px) 
-{
+    header
+    {
+        color: lightgray;
+        .about{
+            color: lightgray;
+            a{
+                color: lightgray;
+            }
+        }
+        .theme-btn
+        {
+            svg{
+                path{
+                    fill: lightgray;
+                }
+            }
+            span{
+                background: $font-color;
+            }
+            span::before
+            {
+                background: darkgray;
+            }
+        }
+    }
+
+    .loader-layer
+    {
+        background: $dark-primary;
+    }
+    .lds-dual-ring:after
+    {
+        border: 6px solid lightgray;
+        border-color: lightgray transparent lightgray transparent;
+    }
+
     .homepage
     {
         .content
         {
-            max-width: unset;
-            width: 80%;
+            box-shadow: $box-shadow-dark;
+            background: $dark-secondary;
+
+            &>p{
+                color: lightgray;
+            }
+            ul{
+                .quiz-selection-element
+                {
+                    box-shadow: $box-shadow-dark;
+
+                    &__content
+                    {
+                        h1,p{
+                            color: lightgray;
+                        }
+                    }
+                } 
+            }
         }
+        
     }
 
     .quiz-section
     {
-        max-width: unset;
-        width: 80%;
+        background: $dark-secondary;
+        box-shadow: $box-shadow-dark;
+
+        .progression
+        {
+            .quit
+            {
+                &::before,&::after
+                {
+                    background: lightgray;   
+                }
+            }
+
+            &__bar-container
+            {
+                background: darkgray;
+            }
+            &__status
+            {
+                color: lightgray;
+            }
+        }
+
         &__content
         {
-            .question
+            p{
+                color: lightgray;
+            }
+            img{
+                border: none;
+            }
+
+            .propositions
             {
-                font-size:22px;   
+                li{
+                    color: lightgray;
+
+                    &:hover
+                    {
+                        background: $dark-primary;
+                    }
+                }
+            }
+        }   
+    }
+
+    .game-over
+    {
+        background: $dark-secondary;
+        box-shadow: $box-shadow-dark;
+
+        &__best-score,&__score
+        {
+            p{
+                color: lightgray;
             }
         }
     }
+
 }

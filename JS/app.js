@@ -10,11 +10,12 @@ let quizChoices = document.querySelectorAll(".homepage .content ul li");
   let maxQustions = 20;
   let Allcountries; // tableau contenant 250 pays (apres la requete)
   let max; // la longeur de Allcountries
-
+  let playing = false; 
 
 
   function setPropositions(quiz) // genere les propositions 
   {    
+      quizSection.querySelector(".question img").src = "";
       document.querySelector(".quiz-section__content").classList.remove("disapear");      
       document.querySelector(".quiz-section__content").classList.add("apear");      
 
@@ -77,12 +78,16 @@ let quizChoices = document.querySelectorAll(".homepage .content ul li");
 
       // l'indice de la bonne reponse est dans positions[0] puisque currentCountry est ajoutéee en premier au tableau
       responseIndice=positions[0];
+      playing=true;
 
   }
 
   function correction(correctRepIndice,userRepIndice) //applique les animations de correction aux propositions
   {
+      playing=false; // le joueur ne paut pas jouer pendant la correction
+    
       // l'ndice de la bonne reponse se trouve dans la variable globale responseIndice
+      
       if(userRepIndice==correctRepIndice) // le joueur a entrer la bonne reponse
       {
           quizPropositions[userRepIndice].classList.add("correct");
@@ -136,35 +141,36 @@ let quizChoices = document.querySelectorAll(".homepage .content ul li");
   for (let i = 0; i < quizPropositions.length; i++) // on surveille sur quelle proposition le user a cliqué 
       {
         quizPropositions[i].addEventListener("click",()=>{
-          
-          correction(responseIndice,i); // l'element a l'indice i est celui sur lequel l'utlisateur a cliqué
-
-          //-----------on rejoue ? ---------------
-
-          if(progression<maxQustions) // oui
+          if(playing)
           {
-            //--on fais disparaitre les propositions une fois que les animations ont été jouées 
-            document.querySelector(".quiz-section__content").classList.remove("apear");
-            document.querySelector(".quiz-section__content").classList.add("disapear");
-            setTimeout(() => {
-              
-              //-------on gere la barre de progression-------------------
+              correction(responseIndice,i); // l'element a l'indice i est celui sur lequel l'utlisateur a cliqué
 
-              document.querySelector(".progression__bar").style.transform = `scaleX(${progression/maxQustions})`;
-              document.querySelector(".progression__status span").innerHTML = `${score}`;
+              //-----------on rejoue ? ---------------
 
-              resetPropositions(); // un timeout est necessaire avant de reset les propositions car entre temps les animations sont en cours 
-              setPropositions(currentQuiz);  
-            }, 2200); // avec un timeout de 2200 les animations entre chaque questions s'enchainent parfaitement
+              if(progression<maxQustions) // oui
+              {
+                //--on fais disparaitre les propositions une fois que les animations ont été jouées 
+                document.querySelector(".quiz-section__content").classList.remove("apear");
+                document.querySelector(".quiz-section__content").classList.add("disapear");
+                setTimeout(() => {
+                  
+                  //-------on gere la barre de progression-------------------
 
-        
-          }
-          else // non
-          {
+                  document.querySelector(".progression__bar").style.transform = `scaleX(${progression/maxQustions})`;
+                  document.querySelector(".progression__status span").innerHTML = `${score}`;
+
+                  resetPropositions(); // un timeout est necessaire avant de reset les propositions car entre temps les animations sont en cours 
+                  setPropositions(currentQuiz);  
+                }, 2200); // avec un timeout de 2200 les animations entre chaque questions s'enchainent parfaitement
+
             
-            callGameOver();
+              }
+              else // non
+              {
+                
+                callGameOver();
+              }
           }
-
         })
         
       }
@@ -202,6 +208,7 @@ let quizChoices = document.querySelectorAll(".homepage .content ul li");
               {
                 quizSection.classList.add("section-apear");
                 quizSection.classList.remove("inactive");  
+                playing=true;
               }
               else // on retourne a l'acceuil 
               {
@@ -228,7 +235,7 @@ let quizChoices = document.querySelectorAll(".homepage .content ul li");
   }
 
 
-  function quiGame() {
+  function quitGame() {
       resetQuiz();
 
       setScoresInHomePage();
@@ -244,13 +251,9 @@ let quizChoices = document.querySelectorAll(".homepage .content ul li");
           homepage.classList.remove("section-disapear");
           
         }, 700);
-
-      // setTimeout(() => {
-      //   homepage.classList.remove("section-apear");
-      // }, 700);
   }
 
-  document.querySelector(".quit").addEventListener("click",quiGame);
+  document.querySelector(".quit").addEventListener("click",quitGame);
 
   function getBestScore(quiz)
   {
