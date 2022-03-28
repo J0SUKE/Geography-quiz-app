@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
-*{
+*,*::before,*::after{
     margin: 0;
     padding: 0;
     font-family: "Roboto";
     box-sizing: border-box;
     list-style-type: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+    
 }
 
 a{
@@ -46,6 +54,13 @@ header
     justify-content: space-between;
     padding: 0 3rem;
     color: $font-color;
+
+    @media screen and(max-width:440px) {
+        padding: 0 0;
+        width: 350px;
+        margin: auto;
+    }
+
     .logo
     {
         font-size: 2rem;
@@ -209,7 +224,7 @@ header
                     height: 100%;
                     padding: 1rem;
                     h1{
-                        font-size: clamp(.8rem,3vw,1.5rem);
+                        font-size: clamp(1rem,3vw,1.5rem);
                         color: rgb(102, 102, 102);
                         display: flex;
                         align-items: center;
@@ -238,6 +253,19 @@ header
                             font-size: 1.3rem;
                         }
                         
+                    }
+                }
+
+                @media screen and (max-width:700px) 
+                {
+                    transform: scale(1);
+                    transition: none;
+                    &:hover
+                    {
+                        .quiz-selection-element__animation
+                        {
+                            display: none;
+                        }    
                     }
                 }
                 
@@ -279,7 +307,7 @@ header
 
 .quiz-section
 {
-    margin: 1rem auto 0 auto;
+    margin: 1rem auto 5rem auto;
     background: white;
     max-width: 500px;
     min-width: 350px;
@@ -385,7 +413,7 @@ header
         }
 
         .question{
-            font-size: clamp(.9rem,2.8vw,1.5rem);   
+            font-size: clamp(1.2rem,2.8vw,1.5rem);   
 
             line-height: 2.3rem;
             font-weight: 500;
@@ -447,6 +475,12 @@ header
                 {
                     background: lightgray;
                 }            
+                @media screen and (max-width:700px) {
+                    &:hover
+                    {
+                        background: inherit;
+                    }      
+                }
 
                 @keyframes correct-rep {
                     from{
@@ -550,6 +584,7 @@ header
 {
     width: 50%;
     max-width: 450px;
+    min-width: 350px;
     padding: 3%;
     margin: 3rem auto;
     background: white;
@@ -618,6 +653,14 @@ header
             &:hover
             {
                 background: rgba(199, 59, 16,.2);
+            }
+
+            @media screen and(max-width:700px) {
+                &:hover
+                {
+                    background: inherit;
+                }
+                
             }
         }
     }
@@ -768,6 +811,12 @@ header
                     &:hover
                     {
                         background: $dark-primary;
+                    }
+                    @media screen and (max-width:700px) {
+                        &:hover
+                        {
+                            background: inherit;
+                        }      
                     }
                 }
             }
