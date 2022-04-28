@@ -1,16 +1,16 @@
 let quizChoices = document.querySelectorAll(".homepage .content ul li");
-  let quizSection = document.querySelector(".quiz-section");
-  let quizPropositions = quizSection.querySelectorAll(".propositions li");
-  let homepage = document.querySelector(".homepage");
-  let gameOver = document.querySelector(".game-over");
-  let currentQuiz; 
-  let progression=0;
-  let responseIndice;
-  let score = 0;
-  let maxQustions = 20;
-  let Allcountries; // tableau contenant 250 pays (apres la requete)
-  let max; // la longeur de Allcountries
-  let playing = false; 
+let quizSection = document.querySelector(".quiz-section");
+let quizPropositions = quizSection.querySelectorAll(".propositions li");
+let homepage = document.querySelector(".homepage");
+let gameOver = document.querySelector(".game-over");
+let currentQuiz; 
+let progression=0;
+let responseIndice;
+let score = 0;
+let maxQustions = 20;
+let Allcountries; // tableau contenant 250 pays (apres la requete)
+let max; // la longeur de Allcountries
+let playing = false; 
 
 
   function setPropositions(quiz) // genere les propositions 
